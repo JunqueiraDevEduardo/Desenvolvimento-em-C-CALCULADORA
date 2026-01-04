@@ -14,6 +14,7 @@ Estático executável  Calculadora.c mas que vai buscar headers de funcao da cal
 /*header de 
 Funções calculadora: SOMA, SUBTRAÇÃO, Multiplicação, Divisão, Potência.
 */
+#include"calculadora+.h"
 /*
 float soma(float p1, float p2)
 {
@@ -77,7 +78,7 @@ float res;
 
 
 // ----- CASO UNÁRIO: argc == 3 -----
-if (argc == 3) {
+/*if (argc == 3) {
     // detectar se veio "oper num" ou "num oper"
     const char *op = NULL;
     const char *numstr = NULL;
@@ -112,7 +113,7 @@ if (argc == 3) {
         return 4;
     }
 }
-
+*/
 //atof significa ASCII to Float. converte uma string texto para uma variáve>
 //primeiro vetor de string (argv[1]) para ler os argumetos da linha de coma>
 param1 = (float)atof(argv[1]);
@@ -140,6 +141,7 @@ switch (argv[2][0])
         break;
 	default:
 	printf("Operacao %c nao definida.\n",argv[2][0]);
+	exit(2);
 
 }
 printf("Operacao: %f %c %f = %f",param1,argv[2][0],param2,res);
